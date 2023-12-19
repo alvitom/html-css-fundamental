@@ -1,0 +1,84 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+header nav {
+  display: flex;
+  background-color: rgb(12, 168, 7);
+  color: #ccc;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+}
+
+header nav .brand {
+  cursor: pointer;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  width: 30%;
+  justify-content: space-between;
+}
+
+header nav .container-nav ul li a, header nav .right ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #ccc;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+header nav .container-nav ul li a:hover, header nav .right ul li a:hover {
+  background-color: #ccc;
+  color: rgb(12, 168, 7);
+  border-radius: 10px;
+}
+
+main {
+  display: flex;
+  margin: 30px 20px;
+  justify-content: space-evenly;
+  min-height: 500px;
+}
+
+main article {
+  width: 900px;
+  text-align: justify;
+}
+
+main article p.penulis{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main aside {
+  width: 250px;
+  text-align: justify;
+}
+
+main article h2, main aside h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main aside img {
+  float: left;
+  margin: 10px;
+}
+
+footer {
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(12, 168, 7);
+  color: #ccc;
+}

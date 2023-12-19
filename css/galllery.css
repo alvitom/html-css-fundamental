@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    background-color: #ddd;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 50px 0;
+    text-align: center;
+    text-shadow: 5px 5px 5px white;
+}
+
+div.container {
+    width: 1000px;
+    background-color: white;
+    margin: auto;
+    padding: 40px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+ul.gallery li img {
+    border-radius: 20px;
+}
+
+ul.gallery li {
+    width: 240px;
+    height: 111px;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    border: 3px solid #555;
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+ul.gallery li span {
+    display: block;
+    width: 240px;
+    height: 111px;
+    background-color: rgba(200, 200, 200, 0.8);
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 110px;
+    color: red;
+    text-shadow: 5px 5px 5px pink;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+ul.gallery li a:hover span {
+    opacity: 1;
+}
+
+div.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: 0.5s;
+    text-align: center;
+    padding: 150px 0;
+}
+
+div.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+div.overlay img {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+div.overlay:target img {
+    animation: fade 0.5s;
+}
+
+div.overlay .close-btn {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    top: 95px;
+    left: 76%;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    line-height: 30px;
+    opacity: 0;
+}
+
+div.overlay:target .close-btn {
+    animation: slidedownfade 0.3s 0.3s forwards;
+}
+
+.next, .prev {
+    width: 100px;
+    height: 100px;
+    background-image: url(../images/next.png);
+    position: absolute;
+    top: 35%;
+    margin-left: 70px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../images/prev.png);
+    margin-left: -170px;
+}
+
+div.overlay:target .next, div.overlay:target .prev {
+    animation: fade 0.3s 0.3s forwards;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slidedownfade {
+    0% {
+        margin-top: -10px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+
+/* clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
